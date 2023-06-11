@@ -29,7 +29,7 @@ class UserService
    {
       if($id === null){
          http_response_code(400);
-         return 'Erro: Id do usuário esta nulo!';
+         return 'Error: User id is null!';
       }
       $data = json_decode(file_get_contents('php://input'));
       if($data !== NULL){
