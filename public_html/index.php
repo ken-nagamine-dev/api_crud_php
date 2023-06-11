@@ -12,13 +12,13 @@ $servicesList = ['user'];
 // set your timezone here
 date_default_timezone_set("America/Sao_Paulo");
 
-if (isset($_GET["url"])) {
-   $url = explode('/', $_GET["url"]);
-
+if (isset($_SERVER['REQUEST_URI'])) {
+   $url = explode('/', $_SERVER['REQUEST_URI']);
+   array_shift($url);
    if ($url[0] === 'api') {
       array_shift($url);
-      if($url){
-         if(in_array($url[0], $servicesList)){
+      if ($url) {
+         if (in_array($url[0], $servicesList)) {
             $service = 'App\Services\\' . ucfirst($url[0]) . 'Service';
             array_shift($url);
             $method = strtolower($_SERVER['REQUEST_METHOD']);
@@ -41,4 +41,3 @@ if (isset($_GET["url"])) {
    echo "Path does not exist";
    exit;
 }
-

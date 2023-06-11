@@ -5,9 +5,12 @@ Base code to build a rest api in php.
 * php ^8.1.10
 * composer 2.5.5
 
+### php local server
+* php -S localhost:5000 -t public_html
+
 ## postman exemples:
 ### GET (all):
-**http://localhost/yourProjectName/public_html/api/user**
+**http://localhost:5000/api/user**
 
 * response:
 ```javascript
@@ -30,7 +33,7 @@ Base code to build a rest api in php.
 ```
 
 ### GET (by id):
-**http://localhost/yourProjectName/public_html/api/user/:id**
+**http://localhost:5000/api/user/:id**
 * response:
 ```javascript
 {
@@ -45,7 +48,7 @@ Base code to build a rest api in php.
 ```
 
 ### POST:
-**http://localhost/yourProjectName/public_html/api/user**
+**http://localhost:5000/api/user**
 * body: (raw/JSON)
 ```javascript
 {
@@ -63,7 +66,7 @@ Base code to build a rest api in php.
 ```
 
 ### PUT:
-**http://localhost/yourProjectName/public_html/api/user/:id**
+**http://localhost:5000/api/user/:id**
 * body: (raw/JSON)
 ```javascript
 {
@@ -81,7 +84,7 @@ Base code to build a rest api in php.
 ```
 
 ### DELETE:
-**http://localhost/yourProjectName/public_html/api/user/:id**
+**http://localhost:5000/api/user/:id**
 * response:
 ```javascript
 {
